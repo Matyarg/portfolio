@@ -10,7 +10,7 @@ import Box from '@material-ui/core/Box'
 import Social from '../components/Social'
 import Hidden from '@material-ui/core/Hidden'
 import Zoom from '@material-ui/core/Zoom'
-
+import { StaticImage } from 'gatsby-plugin-image'
 
 
 
@@ -18,17 +18,31 @@ import Zoom from '@material-ui/core/Zoom'
 const useStyles = makeStyles((theme) => ({
     section: {
         height: "90vh",
-        backgroundImage: `url(${fondo})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center"
+        userSelect: "none"
     },
     container: {
         height: "100%",
 
     },
     content: {
-        height: "100%"
+        height: "100%",
+        zIndex: 100,
+        position: "relative"
     },
+    overlay: {
+        height: "100%",
+        backgroundColor: "rgba(0,0,0,0.4)",
+        position: "absolute",
+        width: "100%",
+        zIndex: 2,
+    },
+    heroImage: {
+        height: "100%",
+        backgroundColor: "rgba(0,0,0,0.4)",
+        position: "absolute",
+        width: "100%",
+        zIndex: 1,
+    }
 }))
 
 
@@ -39,6 +53,8 @@ export default function HeroSection() {
 
   return (
     <Paper className={styles.section}>
+        <StaticImage className={styles.heroImage} src={"../images/background.jpg"} ></StaticImage>
+        <div className={styles.overlay}></div>
         <Container className={styles.container} maxWidth="md">
             <Grid className={styles.content} container justifyContent='space-between' alignItems="center">
                 <Zoom in={shouldShow}>
