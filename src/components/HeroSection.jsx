@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Paper from '@material-ui/core/paper'
 import { makeStyles } from '@material-ui/core/styles'
-import fondo from "../images/background.jpg"
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
@@ -42,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         width: "100%",
         zIndex: 1,
+    },
+    buttons: {
+        color: "#82837b",
+        border: " 2px solid #82837b",
     }
 }))
 
@@ -63,7 +66,8 @@ export default function HeroSection() {
                             Hi, my name is Matias and im a blockchain developer.   </Typography>
                         <Typography variant="h5"> I build apps, SPA and smart contracts</Typography>
                         <Box my={2}>
-                            <Button href="mailto:matias.gim15@gmail.com" variant="outlined" color="primary">Get in Touch</Button> 
+                            <Button href="mailto:matias.gim15@gmail.com" variant="outlined"
+                            className={styles.buttons}>Get in Touch</Button> 
                         </Box>
                     </Grid>
                 </Zoom>
