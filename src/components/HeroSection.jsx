@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Paper from '@material-ui/core/paper'
 import { makeStyles } from '@material-ui/core/styles'
 import fondo from "../images/background.jpg"
@@ -8,6 +8,11 @@ import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'
 import Social from '../components/Social'
+import Hidden from '@material-ui/core/Hidden'
+import Zoom from '@material-ui/core/Zoom'
+
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,19 +34,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HeroSection() {
     const styles = useStyles()
+    const [shouldShow, setShouldShow] = useState(false)
+    useEffect(() => setShouldShow(true))
+
   return (
     <Paper className={styles.section}>
         <Container className={styles.container} maxWidth="md">
             <Grid className={styles.content} container justifyContent='space-between' alignItems="center">
-                <Grid item sm={8}> 
-                    <Typography component="h1" variant="h3">
-                        Hi, my name is Matias and im a blockchain developer.   </Typography>
-                    <Typography variant="h5"> I build apps, SPA and smart contracts</Typography>
-                    <Box my={2}>
-                        <Button href="mailto:matias.gim15@gmail.com" variant="outlined" color="primary">Get in Touch</Button> 
-                    </Box>
-                </Grid>
-                <Grid item> <Social/></Grid>
+                <Zoom in={shouldShow}>
+                    <Grid item sm={8}> 
+                        <Typography component="h1" variant="h3">
+                            Hi, my name is Matias and im a blockchain developer.   </Typography>
+                        <Typography variant="h5"> I build apps, SPA and smart contracts</Typography>
+                        <Box my={2}>
+                            <Button href="mailto:matias.gim15@gmail.com" variant="outlined" color="primary">Get in Touch</Button> 
+                        </Box>
+                    </Grid>
+                </Zoom>
+                <Hidden xsDown>
+                    <Grid item> 
+                        <Social direction="column"/>
+                    </Grid>
+                </Hidden>
             </Grid>
         </Container>
     </Paper>
