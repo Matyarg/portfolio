@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import Paper from '@material-ui/core/paper'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
@@ -15,15 +15,15 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 
 const useStyles = makeStyles((theme) => ({
-    section: {
+    section : {
         height: "90vh",
         userSelect: "none",
         position: "relative"
-
-    },
+        
+    },  
     container: {
         height: "100%",
-
+        
     },
     content: {
         height: "100%",
@@ -55,31 +55,31 @@ export default function HeroSection() {
     const styles = useStyles()
     const [shouldShow, setShouldShow] = useState(false)
     useEffect(() => setShouldShow(true),[])
-
-  return (
-    <Paper className={styles.section} id="about">
+    
+    return (
+        <Paper className={styles.section} id="about">
         <StaticImage className={styles.heroImage} src={"../images/background.jpg"} ></StaticImage>
         <div className={styles.overlay}></div>
         <Container className={styles.container} maxWidth="md">
-            <Grid className={styles.content} container justifyContent='space-between' alignItems="center">
-                <Zoom in={shouldShow}>
-                    <Grid item sm={8}> 
-                        <Typography component="h1" variant="h3">
-                            Hi, my name is Matias and im a blockchain developer.   </Typography>
-                        <Typography variant="h5"> I build apps, SPA and smart contracts</Typography>
-                        <Box my={2}>
-                            <Button href="mailto:matias.gim15@gmail.com" variant="outlined"
-                            className={styles.buttons}>Get in Touch</Button> 
-                        </Box>
-                    </Grid>
-                </Zoom>
-                <Hidden xsDown>
-                    <Grid item> 
-                        <Social direction="column"/>
-                    </Grid>
-                </Hidden>
-            </Grid>
+        <Grid className={styles.content} container justifyContent='space-between' alignItems="center">
+        <Zoom in={shouldShow}>
+        <Grid item sm={8}> 
+        <Typography component="h1" variant="h3">
+        Hi, my name is Matias and im a blockchain developer.   </Typography>
+        <Typography variant="h5"> I build apps, SPA and smart contracts</Typography>
+        <Box my={2}>
+        <Button href="mailto:matias.gim15@gmail.com" variant="outlined"
+        className={styles.buttons}>Get in Touch</Button> 
+        </Box>
+        </Grid>
+        </Zoom>
+        <Hidden xsDown>
+        <Grid item> 
+        <Social direction="column"/>
+        </Grid>
+        </Hidden>
+        </Grid>
         </Container>
-    </Paper>
-  )
-}
+        </Paper>
+        )
+    }
