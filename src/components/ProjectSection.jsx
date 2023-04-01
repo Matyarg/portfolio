@@ -80,9 +80,9 @@ function Project({title, description, imageAlt, imageUrl, tags, links}) {
 
 export default function ProjectSection() {
   return (
-    <Container maxWidth="md" id="projects">
-        <Box pt={9} mb={2}>
-        <Typography variant="m4" >Projects</Typography>
+    <Container  maxWidth="md" id="projects">
+        <Box pt={6} mb={4}>
+        <Typography  component="h1" variant="m4" >Projects</Typography>
         </Box>
         <Grid container direction="column" spacing={4}>
             {projectsData.map((data) => (
