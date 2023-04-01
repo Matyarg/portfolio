@@ -57,7 +57,7 @@ export default function HeroSection() {
     useEffect(() => setShouldShow(true),[])
 
   return (
-    <Paper className={styles.section}>
+    <Paper className={styles.section} id="about">
         <StaticImage className={styles.heroImage} src={"../images/background.jpg"} ></StaticImage>
         <div className={styles.overlay}></div>
         <Container className={styles.container} maxWidth="md">

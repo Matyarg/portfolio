@@ -16,9 +16,9 @@ import ListItem from '@material-ui/core/ListItem'
 
 
 const navegationLinks = [
-    { name: "About", href:"" },
-    { name: "Resume", href:"h" },
-    { name: "Projects", href:"" },
+    { name: "About", href:"#about" },
+    { name: "Projects", href:"#projects" },
+    { name: "Resume", href:"#resume" },
 ]
 
 const useStyles = makeStyles((theme) => ({
