@@ -17,7 +17,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 const useStyles = makeStyles((theme) => ({
     section: {
         height: "90vh",
-        userSelect: "none"
+        userSelect: "none",
+        position: "relative"
+
     },
     container: {
         height: "100%",
@@ -52,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HeroSection() {
     const styles = useStyles()
     const [shouldShow, setShouldShow] = useState(false)
-    useEffect(() => setShouldShow(true))
+    useEffect(() => setShouldShow(true),[])
 
   return (
     <Paper className={styles.section}>
