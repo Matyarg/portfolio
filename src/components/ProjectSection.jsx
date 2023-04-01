@@ -3,14 +3,23 @@ import GithubIcon from '@material-ui/icons/Github'
 import OpenInNewIcon from '@material-ui/icons/OpenInNew'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
 
+
+function Project({title}) {
+    return <Grid item>{title}</Grid> 
+}
 
 export default function ProjectSection() {
   return (
-    <Container>
-        <Grid container>
+    <Container maxWidth="md">
+        <Box mt={6} mb={2}>
+        <Typography variant="m4" >Projects</Typography>
+        </Box>
+        <Grid container direction="column" spacing={4}>
             {projectsData.map((data) => (
-                <Grid>{data.title}</Grid> 
+                <Project {...data}></Project>
             ))}
         </Grid>
     </Container>
